@@ -3,9 +3,14 @@
     src: url(../fonts/Montserrat-Regular.ttf);
 }
 
+:root {
+    --primary-color: #2FB86E;
+}
+
 *{
     margin: 0;
     font-family: Montserrat;
+    scroll-behavior: smooth;
 }
 
 body{
@@ -25,26 +30,30 @@ header
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    background-color: #2FB86E;
+    background-color: var(--primary-color);
+    padding-top: 3vh;
 }
 
 .navbar-header > *
 {
-    background-color: #2FB86E;
+    background-color: var(--primary-color);
     color: #ffffff;
     width: 8em;
     margin-top: 1em;
-    height:3em;
     margin-right: 2em;
-    border: none;
+    padding: 1em;
+    border: 1.5px solid transparent;
+    transition: border 0.18s ease-in-out;
     font-family: Montserrat;
     text-decoration: none;
     cursor:pointer;
+    outline: none;
 }
 
-.navbar-header>*:hover {
-    border-bottom: solid;
-    transition: 0.05s;
+.navbar-header a:hover {
+    border-bottom: 1.5px solid;
+    transition: 0.1s;
+    transition-timing-function: ease-in-out;
 }
 
 /* Main Section */
@@ -54,7 +63,7 @@ header
     display: flex;
     height: 80vh;
     background: url(../img/background/Background-Landing.jpg);
-    background-repeat: no-repeat;
+    background-position:center;
     background-size: 110% 100%;
     color: white;
 }
@@ -79,7 +88,7 @@ header
     display: flex;
     align-items: center;
     padding-left: 5%;
-    color: #2FB86E;
+    color: var(--primary-color);
 }
 
 .app-section figure img{
@@ -96,10 +105,9 @@ header
     height: 120vh;
     display: flex;
     align-items: center;
-    padding-left: 5%;
-    background: url(../img/background/Background-Landing-preFooter.svg);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
+    padding-right: 4vw;
+    background: url(../img/background/Background-Landing-preFooter.jpg);
+    background-size: 110% 100%;
     color: white;
     text-align: center;
 }
@@ -109,6 +117,76 @@ header
     height: 50vh;
 }
 
+/* Download Section */
+
+.download-section {
+    padding: 5vw 5vw 0 5vw;
+    display: flex;
+    height: 100vh;
+    background-color: var(--primary-color);
+    background-repeat: round;
+    background-size: 110% 100%;
+    color: white;
+}
+
+.download-section button {
+    margin-top: 1vh;
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+    border: none;
+    height: 15vh;
+    width: 100%;
+    border-radius: 150px;
+    background-color: white;
+    color: var(--primary-color)
+}
+
+.download-section img {
+    height: 100%;
+    width: 100%;
+}
+
+.download-section div:last-child {
+    padding-top: 20vh;
+}
+
+/* Mission Section */
+
+.mission-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url(../img/background/Background-Landing.jpg);
+    background-size: 110% 100%;
+    color: white;
+}
+
+.mission-section img {
+    width: 100%;
+    height: 50vh;
+}
+
+.mission-section button {
+    margin-top: 1vh;
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+    border: none;
+    height: 15vh;
+    width: 40em;
+    border-radius: 150px;
+    background-color: white;
+    color: var(--primary-color)
+}
+
+.mission-section div:last-child {
+    padding-top: 20vh;
+}
+
 /* Footer */
 
 footer {
@@ -116,4 +194,28 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
+    color: var(--primary-color);
+}
+
+footer a {
+    text-decoration: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+    outline: none;
+}
+
+.footer-icons {
+    margin-left: 5vw;
+    margin-top: 2vh;
+}
+
+.footer-icon {
+    height: 5vh;
+    width: 5vw;
+}
+
+.logo {
+    height: 15vh;
+    width: 100%;
 }
