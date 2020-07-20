@@ -1,0 +1,119 @@
+@font-face {
+    font-family: Montserrat;
+    src: url(../fonts/Montserrat-Regular.ttf);
+}
+
+*{
+    margin: 0;
+    font-family: Montserrat;
+}
+
+body{
+    min-width: 920px;
+}
+
+h1 { font-size: 3em; }
+h2 { font-size: 2.2em; }
+h3 { font-size: 1.6em; }
+h4 { font-size: 1em; }
+h5 { font-size: 0.6em; }
+
+/* Header */
+
+header
+{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    background-color: #2FB86E;
+}
+
+.navbar-header > *
+{
+    background-color: #2FB86E;
+    color: #ffffff;
+    width: 8em;
+    margin-top: 1em;
+    height:3em;
+    margin-right: 2em;
+    border: none;
+    font-family: Montserrat;
+    text-decoration: none;
+    cursor:pointer;
+}
+
+.navbar-header>*:hover {
+    border-bottom: solid;
+    transition: 0.05s;
+}
+
+/* Main Section */
+
+.main-section {
+    padding: 5vw 5vw 0 5vw;
+    display: flex;
+    height: 80vh;
+    background: url(../img/background/Background-Landing.jpg);
+    background-repeat: no-repeat;
+    background-size: 110% 100%;
+    color: white;
+}
+
+.main-section figure img {
+    height: 50vh;
+    width: 50vw;
+}
+
+.main-section h2 {
+    color:white;
+}
+
+.main-section div:first-child{
+    margin-top: 15vh;
+}
+
+/* App Section */
+
+.app-section {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    padding-left: 5%;
+    color: #2FB86E;
+}
+
+.app-section figure img{
+    width: 30%;
+}
+
+.app-section div:last-child{
+    padding-top: 12vh;
+}
+
+/* Houses Section */
+
+.houses-section {
+    height: 120vh;
+    display: flex;
+    align-items: center;
+    padding-left: 5%;
+    background: url(../img/background/Background-Landing-preFooter.svg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    color: white;
+    text-align: center;
+}
+
+.houses-section img{
+    width: 40vw;
+    height: 50vh;
+}
+
+/* Footer */
+
+footer {
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
