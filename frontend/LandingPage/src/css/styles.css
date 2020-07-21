@@ -1,3 +1,5 @@
+/* General Adjustments */
+
 @font-face {
     font-family: Montserrat;
     src: url(../fonts/Montserrat-Regular.ttf);
@@ -97,8 +99,6 @@ header
 .main-section div:first-child{
     margin-top: 15vh;
 }
-
-/*
 
 /* App Section */
 
@@ -237,8 +237,6 @@ footer a {
     height: 5vh;
     width: 5vw;
 }
-
-
 
 .logo {
     height: 15vh;
