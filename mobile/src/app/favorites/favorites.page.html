@@ -1,0 +1,161 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="end" style="padding-right: 10px;">
+      <ion-icon name="search-outline"></ion-icon>
+    </ion-buttons>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h1>Favoritos</h1>
+
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">
+
+      <ion-card>
+        <ion-slides>
+          <ion-slide style="height: max-content;">
+            <img src="../../assets/imgs/house2.jpg" />
+          </ion-slide>
+          <ion-slide style="height: max-content;">
+            <img src="../../assets/imgs/house2.jpg" />
+          </ion-slide>
+        </ion-slides>
+        <ion-row class="republic-card-content-top">
+          <ion-col size="4">
+            <ion-icon name="bed-outline"></ion-icon>
+            Quartos
+          </ion-col>
+          <ion-col size="4">
+            <ion-icon name="bed-outline"></ion-icon>
+            Banheiros
+          </ion-col>
+          <ion-col size="4">
+            <ion-icon name="female-outline"></ion-icon>
+            Feminino
+          </ion-col>
+        </ion-row>
+        <ion-row class="republic-card-content-bottom">
+          <ion-col size="6">
+            <ion-icon name="bed-outline"></ion-icon>
+            R$900,00
+          </ion-col>
+          <ion-col size="6">
+            <ion-icon name="navigate-outline"></ion-icon>
+            Tijuca - RJ
+          </ion-col>
+        </ion-row>
+      </ion-card>
+
+      <ion-card>
+        <ion-slides>
+          <ion-slide style="height: max-content;">
+            <img src="../../assets/imgs/house2.jpg" />
+          </ion-slide>
+          <ion-slide style="height: max-content;">
+            <img src="../../assets/imgs/house2.jpg" />
+          </ion-slide>
+        </ion-slides>
+        <ion-row class="republic-card-content-top">
+          <ion-col size="4">
+            <ion-icon name="bed-outline"></ion-icon>
+            Quartos
+          </ion-col>
+          <ion-col size="4">
+            <ion-icon name="bed-outline"></ion-icon>
+            Banheiros
+          </ion-col>
+          <ion-col size="4">
+            <ion-icon name="female-outline"></ion-icon>
+            Feminino
+          </ion-col>
+        </ion-row>
+        <ion-row class="republic-card-content-bottom">
+          <ion-col size="6">
+            <ion-icon name="bed-outline"></ion-icon>
+            R$900,00
+          </ion-col>
+          <ion-col size="6">
+            <ion-icon name="navigate-outline"></ion-icon>
+            Tijuca - RJ
+          </ion-col>
+        </ion-row>
+      </ion-card>
+
+      <ion-card>
+        <ion-slides>
+          <ion-slide style="height: max-content;">
+            <img src="../../assets/imgs/house2.jpg" />
+          </ion-slide>
+          <ion-slide style="height: max-content;">
+            <img src="../../assets/imgs/house2.jpg" />
+          </ion-slide>
+        </ion-slides>
+        <ion-row class="republic-card-content-top">
+          <ion-col size="4">
+            <ion-icon name="bed-outline"></ion-icon>
+            Quartos
+          </ion-col>
+          <ion-col size="4">
+            <ion-icon name="bed-outline"></ion-icon>
+            Banheiros
+          </ion-col>
+          <ion-col size="4">
+            <ion-icon name="female-outline"></ion-icon>
+            Feminino
+          </ion-col>
+        </ion-row>
+        <ion-row class="republic-card-content-bottom">
+          <ion-col size="6">
+            <ion-icon name="bed-outline"></ion-icon>
+            R$900,00
+          </ion-col>
+          <ion-col size="6">
+            <ion-icon name="navigate-outline"></ion-icon>
+            Tijuca - RJ
+          </ion-col>
+        </ion-row>
+      </ion-card>
+
+      <ion-card>
+        <ion-slides>
+          <ion-slide style="height: max-content;">
+            <img src="../../assets/imgs/house2.jpg" />
+          </ion-slide>
+          <ion-slide style="height: max-content;">
+            <img src="../../assets/imgs/house2.jpg" />
+          </ion-slide>
+        </ion-slides>
+        <ion-row class="republic-card-content-top">
+          <ion-col size="4">
+            <ion-icon name="bed-outline"></ion-icon>
+            Quartos
+          </ion-col>
+          <ion-col size="4">
+            <ion-icon name="bed-outline"></ion-icon>
+            Banheiros
+          </ion-col>
+          <ion-col size="4">
+            <ion-icon name="female-outline"></ion-icon>
+            Feminino
+          </ion-col>
+        </ion-row>
+        <ion-row class="republic-card-content-bottom">
+          <ion-col size="6">
+            <ion-icon name="bed-outline"></ion-icon>
+            R$900,00
+          </ion-col>
+          <ion-col size="6">
+            <ion-icon name="navigate-outline"></ion-icon>
+            Tijuca - RJ
+          </ion-col>
+        </ion-row>
+      </ion-card>
+
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

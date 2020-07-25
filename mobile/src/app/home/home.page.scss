@@ -1,0 +1,29 @@
+ion-slides {
+    height: 15em;
+}
+
+.republic-card-content-top {
+    height: 5em; 
+    padding-top: 1em; 
+}
+
+.republic-card-content-bottom {
+    padding-top: -3em;
+    height: 3em;
+}
+
+ion-toolbar {
+    border: none;
+}
+
+
+.filters-bar {
+    margin-top: 10px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+
+*::-webkit-scrollbar{
+   display: none; 
+}
