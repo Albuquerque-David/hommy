@@ -16,10 +16,13 @@ class CreateRentersTable extends Migration
         Schema::create('renters', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('email');
+            $table->string('email')->unique();
+            $table->timestamp('email_verified_at')->nullable();
+            $table->string('password');
+            $table->rememberToken();
             $table->string('city');
             $table->string('state');
-            $table->string('interestedNeighborhood');
+            $table->string('interestedNeighborhood')->nullable();
             $table->string('phoneNumber');
             $table->timestamps();
         });

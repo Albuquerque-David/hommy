@@ -16,7 +16,7 @@ class Tenant extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'cpf', 'phoneNumber'
     ];
 
     /**
@@ -25,7 +25,7 @@ class Tenant extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'remember_token',
     ];
 
     /**
