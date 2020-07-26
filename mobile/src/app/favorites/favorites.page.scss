@@ -1,5 +1,21 @@
+h1{
+    padding-left: 5vw;
+}
+
 ion-menu-button {
     color: var(--ion-color-primary);
+}
+
+ion-slides {
+    height: 30vh;
+}
+
+.republic-card-content-top {
+    height: 5vh;
+}
+
+.republic-card-content-bottom {
+    padding-bottom: 1vh;
 }
 
 #container {
@@ -26,3 +42,4 @@ ion-menu-button {
 #container a {
     text-decoration: none;
 }
+

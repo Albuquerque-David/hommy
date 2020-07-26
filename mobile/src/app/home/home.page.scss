@@ -1,21 +1,24 @@
+
+ion-chip {
+    color: #2FB86E;
+    border: red;
+}
+
+ion-chip ion-icon {
+    color: #2FB86E;
+}
+
 ion-slides {
-    height: 15em;
+    height: 30vh;
 }
 
 .republic-card-content-top {
-    height: 5em; 
-    padding-top: 1em; 
+    height: 5vh; 
 }
 
 .republic-card-content-bottom {
-    padding-top: -3em;
-    height: 3em;
+    padding-bottom: 1vh;
 }
-
-ion-toolbar {
-    border: none;
-}
-
 
 .filters-bar {
     margin-top: 10px;
