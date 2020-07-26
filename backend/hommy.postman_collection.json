@@ -1,0 +1,1076 @@
+{
+	"info": {
+		"_postman_id": "dc5a6a97-c0f0-4239-96a8-1051b6d3c9b9",
+		"name": "Hommy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Renters",
+			"item": [
+				{
+					"name": "ShowRenter",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/renter/4",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"renter",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ListRenters",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/renter/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"renter",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateRenter",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "maria",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "davivvvvd@david.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "1234",
+									"type": "text"
+								},
+								{
+									"key": "city",
+									"value": "Rio de Janeiro",
+									"type": "text"
+								},
+								{
+									"key": "state",
+									"value": "RJ",
+									"type": "text"
+								},
+								{
+									"key": "phoneNumber",
+									"value": "12345678",
+									"type": "text"
+								},
+								{
+									"key": "interestedNeighborhood",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/renter",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"renter"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateRenter",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "davidvvvvccccc",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "david@davidddd.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "1234",
+									"type": "text"
+								},
+								{
+									"key": "city",
+									"value": "Rio de Janeiro",
+									"type": "text"
+								},
+								{
+									"key": "state",
+									"value": "RJ",
+									"type": "text"
+								},
+								{
+									"key": "phoneNumber",
+									"value": "1234",
+									"type": "text"
+								},
+								{
+									"key": "interestedNeighborhood",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/renter/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"renter",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteRenter",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/renter/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"renter",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "913fe828-f871-42b5-bf8d-684e7f0a8dd5",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "63f69370-ec00-4b03-86f9-73d552428e91",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Tenants",
+			"item": [
+				{
+					"name": "ShowTenant",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/tenant/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"tenant",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ListTenants",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/tenant",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"tenant"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateTenant",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "macvcccccdccccccccccriavvcxsdddd",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "dadsddddssvid@dddadvid.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "1234",
+									"type": "text"
+								},
+								{
+									"key": "phoneNumber",
+									"value": "123456",
+									"type": "text"
+								},
+								{
+									"key": "cpf",
+									"value": "123456789",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/tenant",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"tenant"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateTenant",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "davidvvvvccccc",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "dacvddvid@davidddd.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "1234",
+									"type": "text"
+								},
+								{
+									"key": "cpf",
+									"value": "00260026",
+									"type": "text"
+								},
+								{
+									"key": "phoneNumber",
+									"value": "443211",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/tenant/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"tenant",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteTenant",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/tenant/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"tenant",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "31ba114c-76bb-4031-836d-2104653c9909",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "4de0ada7-5ac5-4220-8260-776d58564920",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Republics",
+			"item": [
+				{
+					"name": "ShowRepublic",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/republic/3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"republic",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ListRepublics",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/republic",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"republic"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateRepublic",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "maria",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Lore ipsum lore ipsum Lore ipsum lore ipsum Lore ipsum lore ipsum Lore ipsum lore ipsum Lore ipsum lore ipsum Lore ipsum lore ipsum ",
+									"type": "text"
+								},
+								{
+									"key": "neighborhood",
+									"value": "Tijuca",
+									"type": "text"
+								},
+								{
+									"key": "city",
+									"value": "Rio de Janeiro",
+									"type": "text"
+								},
+								{
+									"key": "state",
+									"value": "RJ",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "Rua dos Fulanos, 1",
+									"type": "text"
+								},
+								{
+									"key": "bedrooms",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "bathrooms",
+									"value": "4",
+									"type": "text"
+								},
+								{
+									"key": "allowedTo",
+									"value": "Both",
+									"type": "text"
+								},
+								{
+									"key": "value",
+									"value": "900,00",
+									"type": "text"
+								},
+								{
+									"key": "tenant_id",
+									"value": "3",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/republic",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"republic"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteRepublic",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/republic/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"republic",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateRepublic",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "marcos",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Lore ipsum lore ipsum Lore ipsum lore ipsum Lore ipsum lore ipsum Lore ipsum lore ipsum Lore ipsum lore ipsum Lore ipsum lore ipsum ",
+									"type": "text"
+								},
+								{
+									"key": "neighborhood",
+									"value": "Tijuca",
+									"type": "text"
+								},
+								{
+									"key": "city",
+									"value": "Rio de Janeiro",
+									"type": "text"
+								},
+								{
+									"key": "state",
+									"value": "RJ",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "Rua dos Fulanos, 1",
+									"type": "text"
+								},
+								{
+									"key": "bedrooms",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "bathrooms",
+									"value": "4",
+									"type": "text"
+								},
+								{
+									"key": "allowedTo",
+									"value": "Both",
+									"type": "text"
+								},
+								{
+									"key": "value",
+									"value": "900,00",
+									"type": "text"
+								},
+								{
+									"key": "tenant_id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/republic/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"republic",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "436bf78c-5c6a-4878-b4bd-5577ac0852fd",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "72024cb1-e84d-49c6-b5de-ae10a58b774d",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Commentaries",
+			"item": [
+				{
+					"name": "ShowCommentary",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/commentary/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"commentary",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ListCommentaries",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/commentary",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"commentary"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateCommentary",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "commentary",
+									"value": "This is a description.",
+									"type": "text"
+								},
+								{
+									"key": "fk_renter",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "fk_republic",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/commentary",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"commentary"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteCommentary",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/republic/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"republic",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateCommentary",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "commentary",
+									"value": "this is a commentary",
+									"type": "text"
+								},
+								{
+									"key": "fk_renter",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "fk_republic",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/commentary/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"commentary",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "e2f7099f-7b33-4bc4-afcc-2859dce48cc9",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "4359516d-b89a-4508-8454-6f34474a0ad7",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Favourites",
+			"item": [
+				{
+					"name": "ShowFavourite",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/favourite/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"favourite",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ListFavourites",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/favourite",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"favourite"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateFavourite",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "renter_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "republic_id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/favourite",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"favourite"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteFavourite",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/favourite/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"favourite",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateFavourite",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "commentary",
+									"value": "this is a commentary",
+									"type": "text"
+								},
+								{
+									"key": "fk_renter",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "fk_republic",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/favourite/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"favourite",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "2e551b72-a65f-43b8-8012-7984b1593777",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "966f6fbd-9736-4abd-9d28-bc4870f00414",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

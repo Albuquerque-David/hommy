@@ -30,3 +30,20 @@ Route::post('tenant','TenantController@createTenant');
 Route::put('tenant/{id}','TenantController@updateTenant');
 Route::delete('tenant/{id}','TenantController@deleteTenant');
 
+Route::get('republic','RepublicController@listRepublics');
+Route::get('republic/{id}','RepublicController@showRepublic');
+Route::post('republic','RepublicController@createRepublic');
+Route::put('republic/{id}','RepublicController@updateRepublic');
+Route::delete('republic/{id}','RepublicController@deleteRepublic');
+
+Route::get('commentary','CommentaryController@listCommentaries');
+Route::get('commentary/{id}','CommentaryController@showCommentary');
+Route::post('commentary','CommentaryController@createCommentary');
+Route::put('commentary/{id}','CommentaryController@updateCommentary');
+Route::delete('commentary/{id}','CommentaryController@deleteCommentary');
+
+Route::get('favourite','FavouritesController@listFavourites');
+Route::get('favourite/{id}','FavouritesController@showFavourite');
+Route::post('favourite','FavouritesController@createFavourite');
+Route::put('favourite/{id}','FavouritesController@updateFavourite');
+Route::delete('favourite/{id}','FavouritesController@deleteFavourite');

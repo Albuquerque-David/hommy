@@ -20,17 +20,17 @@ class CreateRepublicsTable extends Migration
             $table->string('state');
             $table->string('city');
             $table->string('neighborhood');
-            $table->string('adress');
+            $table->string('address');
             $table->string('bedrooms');
             $table->string('bathrooms');
             $table->string('allowedTo');
             $table->string('value');
-            $table->unsignedBigInteger('fk_tenant');
+            $table->unsignedBigInteger('tenant_id');
             $table->timestamps();
         });
 
         Schema::table('republics', function (Blueprint $table) {
-            $table->foreign('fk_tenant')->references('id')->on('tenants')->onDelete('cascade'); 
+            $table->foreign('tenant_id')->references('id')->on('tenants')->onDelete('cascade'); 
         });
     }
 

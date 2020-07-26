@@ -14,19 +14,19 @@ class CreateCommentariesTable extends Migration
     public function up()
     {
         Schema::create('commentaries', function (Blueprint $table) {
+            $table->id();
             $table->text('commentary');
-            $table->unsignedBigInteger('fk_renter');
-            $table->unsignedBigInteger('fk_republic');
-            $table->primary(['fk_renter','fk_republic']);
+            $table->unsignedBigInteger('renter_id');
+            $table->unsignedBigInteger('republic_id');
             $table->timestamps();
         });
 
         Schema::table('commentaries', function (Blueprint $table) {
-            $table->foreign('fk_renter')->references('id')->on('renters')->onDelete('cascade');
-            $table->foreign('fk_republic')->references('id')->on('republics')->onDelete('cascade');
+            $table->foreign('renter_id')->references('id')->on('renters')->onDelete('cascade');
+            $table->foreign('republic_id')->references('id')->on('republics')->onDelete('cascade');
         });
 
-        
+
     }
 
     /**

@@ -66,8 +66,6 @@ class RenterController extends Controller
     {
         $renter = new Renter;
         $this->fillRenter($renter, $request);
-        //$out = new \Symfony\Component\Console\Output\ConsoleOutput();
-        //$out->writeln($renter);
 
         if($renter->name == null || $renter->email == null || $renter->password == null || $renter->city == null 
             || $renter->state == null || $renter->phoneNumber == null )

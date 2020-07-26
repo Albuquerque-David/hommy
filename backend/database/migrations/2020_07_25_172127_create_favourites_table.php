@@ -14,15 +14,15 @@ class CreateFavouritesTable extends Migration
     public function up()
     {
         Schema::create('favourites', function (Blueprint $table) {
-            $table->unsignedBigInteger('fk_renter');
-            $table->unsignedBigInteger('fk_republic');
-            $table->primary(['fk_renter','fk_republic']);
+            $table->id();
+            $table->unsignedBigInteger('renter_id');
+            $table->unsignedBigInteger('republic_id');
             $table->timestamps();
         });
 
         Schema::table('favourites', function (Blueprint $table) {
-            $table->foreign('fk_renter')->references('id')->on('renters')->onDelete('cascade');
-            $table->foreign('fk_republic')->references('id')->on('republics')->onDelete('cascade');
+            $table->foreign('renter_id')->references('id')->on('renters')->onDelete('cascade');
+            $table->foreign('republic_id')->references('id')->on('republics')->onDelete('cascade');
         });
     }
 
