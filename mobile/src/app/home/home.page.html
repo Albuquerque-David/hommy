@@ -2,6 +2,10 @@
   <ion-buttons slot="start" >
     <ion-menu-button></ion-menu-button>
   </ion-buttons>
+  <ion-title >
+    <ion-searchbar type="text" color="light" placeholder="Search text" clearInput>
+    </ion-searchbar>
+  </ion-title>
   <ion-buttons slot="end" style="padding-right: 10px;">
     <ion-icon name="notifications-outline"></ion-icon>
   </ion-buttons>
@@ -9,8 +13,7 @@
 </ion-toolbar>
 
 <ion-content >
-  <ion-searchbar type="text" color="light" placeholder="Search text" clearInput>
-  </ion-searchbar>
+  
 
   <div class="filters-bar" >
     <ion-chip>
@@ -42,7 +45,7 @@
   <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)" >
     <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">
 
-       <ion-card>
+       <ion-card *ngFor="let republic of republics">
          <ion-slides>
            <ion-slide style="height: max-content;">
              <img src="../../assets/imgs/house2.jpg" />
@@ -54,146 +57,31 @@
          <ion-row class="republic-card-content-top">
            <ion-col size="4">
              <ion-icon name="bed-outline"></ion-icon>
-             3 Quartos
+             {{ republic.bedrooms }} Quartos
            </ion-col>
            <ion-col size="4">
              <ion-icon name="bed-outline"></ion-icon>
-             2 Banheiros
+            {{ republic.bathrooms }} Banheiros
            </ion-col>
            <ion-col size="4">
-             <ion-icon name="female-outline"></ion-icon>
-             Feminino
+              <ion-icon name="female-outline" *ngIf="republic.allowedTo == 'Feminino'"></ion-icon>
+              <ion-icon name="male-outline" *ngIf="republic.allowedTo == 'Masculino'"></ion-icon>
+              <ion-icon name="male-female-outline" *ngIf="republic.allowedTo == 'Ambos'"></ion-icon>
+              {{ republic.allowedTo }}
            </ion-col>
          </ion-row>
          <ion-row class="republic-card-content-bottom">
            <ion-col size="4">
              <ion-icon name="bed-outline"></ion-icon>
-             R$900,00
+             R${{ republic.value }},00
            </ion-col>
            <ion-col size="4">
              <ion-icon name="navigate-outline"></ion-icon>
-             Tijuca - RJ
+            {{ republic.neighborhood }} - {{ republic.state }}
            </ion-col>
            <ion-col size="4">
              <ion-icon name="star-outline"></ion-icon>
-             2,8
-           </ion-col>
-         </ion-row>
-       </ion-card>
-
-       <ion-card>
-         <ion-slides>
-           <ion-slide style="height: max-content;">
-             <img src="../../assets/imgs/house2.jpg" />
-           </ion-slide>
-           <ion-slide style="height: max-content;">
-             <img src="../../assets/imgs/house2.jpg" />
-           </ion-slide>
-         </ion-slides>
-         <ion-row class="republic-card-content-top">
-           <ion-col size="4">
-             <ion-icon name="bed-outline"></ion-icon>
-             2 Quartos
-           </ion-col>
-           <ion-col size="4">
-             <ion-icon name="bed-outline"></ion-icon>
-             2 Banheiros
-           </ion-col>
-           <ion-col size="4">
-             <ion-icon name="female-outline"></ion-icon>
-             Masculino
-           </ion-col>
-         </ion-row>
-         <ion-row class="republic-card-content-bottom">
-           <ion-col size="4">
-             <ion-icon name="bed-outline"></ion-icon>
-             R$900,00
-           </ion-col>
-           <ion-col size="4">
-             <ion-icon name="navigate-outline"></ion-icon>
-             Tijuca - RJ
-           </ion-col>
-           <ion-col size="4">
-             <ion-icon name="star-outline"></ion-icon>
-             5
-           </ion-col>
-         </ion-row>
-       </ion-card>
-
-       <ion-card>
-         <ion-slides>
-           <ion-slide style="height: max-content;">
-             <img src="../../assets/imgs/house2.jpg" />
-           </ion-slide>
-           <ion-slide style="height: max-content;">
-             <img src="../../assets/imgs/house2.jpg" />
-           </ion-slide>
-         </ion-slides>
-         <ion-row class="republic-card-content-top">
-           <ion-col size="4">
-             <ion-icon name="bed-outline"></ion-icon>
-             4 Quartos
-           </ion-col>
-           <ion-col size="4">
-             <ion-icon name="bed-outline"></ion-icon>
-             3 Banheiros
-           </ion-col>
-           <ion-col size="4">
-             <ion-icon name="female-outline"></ion-icon>
-             Ambos
-           </ion-col>
-         </ion-row>
-         <ion-row class="republic-card-content-bottom">
-           <ion-col size="4">
-             <ion-icon name="bed-outline"></ion-icon>
-             R$900,00
-           </ion-col>
-           <ion-col size="4">
-             <ion-icon name="navigate-outline"></ion-icon>
-             Tijuca - RJ
-           </ion-col>
-           <ion-col size="4">
-             <ion-icon name="star-outline"></ion-icon>
-             4,5
-           </ion-col>
-         </ion-row>
-       </ion-card>
-
-       <ion-card>
-         <ion-slides>
-           <ion-slide style="height: max-content;">
-             <img src="../../assets/imgs/house2.jpg" />
-           </ion-slide>
-           <ion-slide style="height: max-content;">
-             <img src="../../assets/imgs/house2.jpg" />
-           </ion-slide>
-         </ion-slides>
-         <ion-row class="republic-card-content-top">
-           <ion-col size="4">
-             <ion-icon name="bed-outline"></ion-icon>
-             3 Quartos
-           </ion-col>
-           <ion-col size="4">
-             <ion-icon name="bed-outline"></ion-icon>
-             2 Banheiros
-           </ion-col>
-           <ion-col size="4">
-             <ion-icon name="female-outline"></ion-icon>
-             Ambos
-           </ion-col>
-         </ion-row>
-         <ion-row class="republic-card-content-bottom">
-           <ion-col size="4">
-             <ion-icon name="bed-outline"></ion-icon>
-             R$900,00
-           </ion-col>
-           <ion-col size="4">
-             <ion-icon name="navigate-outline"></ion-icon>
-             Tijuca - RJ
-           </ion-col>
-           <ion-col size="4">
-             <ion-icon name="star-outline"></ion-icon>
-             4,2
+            {{ republic.rating }}
            </ion-col>
          </ion-row>
        </ion-card>
