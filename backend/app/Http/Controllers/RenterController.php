@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\RenterRequest;
 use App\Renter;
 
 class RenterController extends Controller
@@ -10,12 +11,9 @@ class RenterController extends Controller
     //
     // CRUD
     //
-    public function createRenter(Request $request)
+    public function createRenter(RenterRequest $request)
     {
         $renter = new Renter;
-
-        if(!($this->validateRequest($request)))
-            return response()->json('Bad format', 400);
         
         $this->fillRenter($renter,$request);
         $renter->save();
@@ -37,11 +35,9 @@ class RenterController extends Controller
         return response()->json($renter, 200);
     }
 
-    public function updateRenter(Request $request, $id)
+    public function updateRenter(RenterRequest $request, $id)
     {
         $renter = Renter::findOrFail($id);
-        if(!($this->validateRequest($request)))
-            return response()->json('Bad format', 400);
         
         $this->fillRenter($renter,$request);
         $renter->save();
@@ -70,7 +66,7 @@ class RenterController extends Controller
         return response()->json($renter->bedroom);
     }
 
-    public function rentBedroom($id, Request $request)
+    public function rentBedroom($id, RenterRequest $request)
     {
         $renter = Renter::findOrFail($id);
         if($renter == null)
@@ -112,19 +108,7 @@ class RenterController extends Controller
     // Methods
     //
 
-    private function validateRequest(Request $request)
-    {
-        $renter = new Renter;
-        $this->fillRenter($renter, $request);
-
-        if($renter->name == null || $renter->email == null || $renter->password == null || $renter->city == null 
-            || $renter->state == null || $renter->phoneNumber == null )
-            return false;
-
-        return true;
-    }
-
-    private function fillRenter(Renter $renter, Request $request)
+    private function fillRenter(Renter $renter, RenterRequest $request)
     {
         $renter->name = $request->name == null ? $renter->name : $request->name;
         $renter->email = $request->email == null ? $renter->email : $request->email;

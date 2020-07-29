@@ -4,18 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Republic;
+use App\Http\Requests\RepublicRequest;
 
 class RepublicController extends Controller
 {
     //
     // CRUD
     //
-    public function createRepublic(Request $request)
+    public function createRepublic(RepublicRequest $request)
     {
         $republic = new Republic;
-                
-        if(!($this->validateRequest($request)))
-            return response()->json('Bad format', 400);
         
         $this->fillRepublic($republic,$request);
                 
@@ -42,11 +40,9 @@ class RepublicController extends Controller
         return response()->json($republic, 200);
     }
 
-    public function updateRepublic(Request $request, $id)
+    public function updateRepublic(RepublicRequest $request, $id)
     {
         $republic = Republic::findOrFail($id);
-        if(!($this->validateRequest($request)))
-            return response()->json('Bad format', 400);
         
         $this->fillRepublic($republic,$request);
 
@@ -107,20 +103,7 @@ class RepublicController extends Controller
     // Methods
     //
 
-    private function validateRequest(Request $request)
-    {
-        $republic = new Republic;
-        $this->fillRepublic($republic, $request);
-
-        if($republic->name == null || $republic->description == null || $republic->neighborhood == null || $republic->city == null 
-            || $republic->state == null || $republic->address == null|| $republic->bathrooms == null || $republic->allowedTo == null 
-            || $republic->value == null || $republic->tenant_id == null )
-            return false;
-
-        return true;
-    }
-
-    private function fillRepublic(Republic $republic, Request $request)
+    private function fillRepublic(Republic $republic, RepublicRequest $request)
     {
         $republic->name = $request->name == null ? $republic->name : $request->name;
         $republic->description = $request->description == null ? $republic->description : $request->description;
