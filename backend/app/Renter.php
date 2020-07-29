@@ -17,12 +17,12 @@ class Renter extends Authenticatable
 
     public function favourites()
     {
-        return $this->belongsToMany('App\Republic');
+        return $this->belongsToMany('App\Republic', 'favourites','renter_id', 'republic_id');
     }
     
     public function bedroom()
     {
-        return $this->hasOne('App\Bedroom');
+        return $this->belongsTo('App\Bedroom');
     }
     /**
      * The attributes that are mass assignable.

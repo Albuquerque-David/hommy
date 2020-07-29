@@ -4,18 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Favourites;
+use App\Http\Requests\FavouriteRequest;
+
 
 class FavouritesController extends Controller
 {
     //
     // CRUD
     //
-    public function createFavourite(Request $request)
+    public function createFavourite(FavouriteRequest $request)
     {
         $favourite = new Favourites;        
-        
-        if(!($this->validateRequest($request)))
-            return response()->json('Bad format', 400);
         
         $this->fillFavourite($favourite,$request);
 
@@ -43,11 +42,9 @@ class FavouritesController extends Controller
         return response()->json($favourite, 200);
     }
 
-    public function updateFavourite(Request $request, $id)
+    public function updateFavourite(FavouriteRequest $request, $id)
     {
         $favourite = Favourites::findOrFail($id);
-        if(!($this->validateRequest($request)))
-            return response()->json('Bad format', 400);
         
         $this->fillfavourite($favourite,$request);
 
@@ -74,18 +71,7 @@ class FavouritesController extends Controller
     // Methods
     //
 
-    private function validateRequest(Request $request)
-    {
-        $favourite = new Favourites;
-        $this->fillFavourite($favourite, $request);
-
-        if( $favourite->renter_id == null || $favourite->republic_id == null )
-            return false;
-
-        return true;
-    }
-
-    private function fillFavourite(Favourites $favourite, Request $request)
+    private function fillFavourite(Favourites $favourite, FavouriteRequest $request)
     {
         $favourite->renter_id = $request->renter_id == null ? $favourite->renter_id : $request->renter_id;
         $favourite->republic_id = $request->republic_id == null ? $favourite->republic_id : $request->republic_id;

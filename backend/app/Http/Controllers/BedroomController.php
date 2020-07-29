@@ -3,18 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\BedroomRequest;
+
 
 use App\Bedroom;
 
 class BedroomController extends Controller
 {
     //
-    public function createBedroom(Request $request)
+    public function createBedroom(BedroomRequest $request)
     {
         $bedroom = new Bedroom;
-
-        if(!($this->validateRequest($request)))
-            return response()->json('Bad format', 400);
         
         $this->fillRenter($bedroom,$request);
         $bedroom->save();
@@ -36,11 +35,9 @@ class BedroomController extends Controller
         return response()->json($bedroom, 200);
     }
 
-    public function updateBedroom(Request $request, $id)
+    public function updateBedroom(BedroomRequest $request, $id)
     {
         $bedroom = Bedroom::findOrFail($id);
-        if(!($this->validateRequest($request)))
-            return response()->json('Bad format', 400);
         
         $this->fillRenter($bedroom,$request);
         $bedroom->save();
@@ -61,18 +58,7 @@ class BedroomController extends Controller
     // Methods
     //
 
-    private function validateRequest(Request $request)
-    {
-        $bedroom = new Bedroom;
-        $this->fillRenter($bedroom, $request);
-
-        if($bedroom->republic_id == null )
-            return false;
-
-        return true;
-    }
-
-    private function fillRenter(Bedroom $bedroom, Request $request)
+    private function fillRenter(Bedroom $bedroom, BedroomRequest $request)
     {
         $bedroom->republic_id = $request->republic_id == null ? $bedroom->republic_id : $request->republic_id;
     }

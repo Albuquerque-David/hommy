@@ -4,18 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Commentary;
+use App\Http\Requests\CommentaryRequest;
+
 
 class CommentaryController extends Controller
 {
     //
     // CRUD
     //
-    public function createCommentary(Request $request)
+    public function createCommentary(CommentaryRequest $request)
     {
         $commentary = new Commentary;        
-        
-        if(!($this->validateRequest($request)))
-            return response()->json('Bad format', 400);
         
         $this->fillCommentary($commentary,$request);
 
@@ -43,11 +42,9 @@ class CommentaryController extends Controller
         return response()->json($commentary, 200);
     }
 
-    public function updateCommentary(Request $request, $id)
+    public function updateCommentary(CommentaryRequest $request, $id)
     {
         $commentary = Commentary::findOrFail($id);
-        if(!($this->validateRequest($request)))
-            return response()->json('Bad format', 400);
         
         $this->fillCommentary($commentary,$request);
 
@@ -74,18 +71,7 @@ class CommentaryController extends Controller
     // Methods
     //
 
-    private function validateRequest(Request $request)
-    {
-        $commentary = new Commentary;
-        $this->fillCommentary($commentary, $request);
-
-        if($commentary->commentary == null || $commentary->renter_id == null || $commentary->republic_id == null )
-            return false;
-
-        return true;
-    }
-
-    private function fillCommentary(Commentary $commentary, Request $request)
+    private function fillCommentary(Commentary $commentary, CommentaryRequest $request)
     {
         $commentary->commentary = $request->commentary == null ? $commentary->commentary : $request->commentary;
         $commentary->renter_id = $request->renter_id == null ? $commentary->renter_id : $request->renter_id;
