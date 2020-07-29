@@ -38,7 +38,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:8000/api/renter/1",
+							"raw": "http://127.0.0.1:8000/api/renter",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -49,8 +49,7 @@
 							"port": "8000",
 							"path": [
 								"api",
-								"renter",
-								"1"
+								"renter"
 							]
 						}
 					},
@@ -96,6 +95,11 @@
 								},
 								{
 									"key": "interestedNeighborhood",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "bedroom_id",
 									"value": "",
 									"type": "text"
 								}
@@ -161,6 +165,11 @@
 									"key": "interestedNeighborhood",
 									"value": "",
 									"type": "text"
+								},
+								{
+									"key": "bedroom_id",
+									"value": "",
+									"type": "text"
 								}
 							]
 						},
@@ -223,6 +232,172 @@
 					"listen": "test",
 					"script": {
 						"id": "63f69370-ec00-4b03-86f9-73d552428e91",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Bedrooms",
+			"item": [
+				{
+					"name": "ShowBedroom",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/bedroom/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"bedroom",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ListBedrooms",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/bedroom",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"bedroom"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateBedroom",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "republic_id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/bedroom",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"bedroom"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateRenter",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "republic_id",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/bedroom/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"bedroom",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteRenter",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/bedroom/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"bedroom",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "a71c8cce-4fa2-48ec-9a5c-42d14e08b13b",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "3050b6e9-0b5e-47b6-8fd4-927c13bee6f0",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -508,7 +683,7 @@
 								},
 								{
 									"key": "neighborhood",
-									"value": "Tijuca",
+									"value": "Tijucassss",
 									"type": "text"
 								},
 								{
@@ -548,7 +723,7 @@
 								},
 								{
 									"key": "tenant_id",
-									"value": "3",
+									"value": "1",
 									"type": "text"
 								}
 							]

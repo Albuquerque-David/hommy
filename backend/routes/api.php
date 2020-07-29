@@ -18,6 +18,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+//
+// CRUD Routes
+//
+
 Route::get('renter','RenterController@listRenters');
 Route::get('renter/{id}','RenterController@showRenter');
 Route::post('renter','RenterController@createRenter');
@@ -47,3 +51,14 @@ Route::get('favourite/{id}','FavouritesController@showFavourite');
 Route::post('favourite','FavouritesController@createFavourite');
 Route::put('favourite/{id}','FavouritesController@updateFavourite');
 Route::delete('favourite/{id}','FavouritesController@deleteFavourite');
+
+Route::get('bedroom','BedroomController@listBedrooms');
+Route::get('bedroom/{id}','BedroomController@showBedroom');
+Route::post('bedroom','BedroomController@createBedroom');
+Route::put('bedroom/{id}','BedroomController@updateBedroom');
+Route::delete('bedroom/{id}','BedroomController@deleteBedroom');
+
+//
+// Relationship Routes
+//
+Route::get('renter/bedroom/{id}','RenterController@showBedroom');

@@ -59,6 +59,18 @@ class RenterController extends Controller
     }
 
     //
+    // Relationship Methods
+    //
+    public function showBedroom($id)
+    {
+        $renter = Renter::findOrFail($id);
+        if($renter == null)
+            return response()->json('Renter not found',404);
+
+        return response()->json($renter->bedroom);
+    }
+
+    //
     // Methods
     //
 
@@ -83,7 +95,6 @@ class RenterController extends Controller
         $renter->state = $request->state == null ? $renter->state : $request->state;
         $renter->interestedNeighborhood = $request->interestedNeighborhood == null ? $renter->interestedNeighborhood : $request->interestedNeighborhood;
         $renter->phoneNumber = $request->phoneNumber == null ? $renter->phoneNumber : $request->phoneNumber;
+        $renter->bedroom_id = $request->bedroom_id == null ? $renter->bedroom_id : $request->bedroom_id;
     }
-
-
 }
