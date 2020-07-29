@@ -16,4 +16,9 @@ class Republic extends Model
     {
         return $this->belongsToMany('App\User');
     }
+
+    public function bedrooms()
+    {
+        return $this->hasMany('App\Bedroom');
+    }
 }
