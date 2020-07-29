@@ -11,4 +11,9 @@ class Republic extends Model
     {
         return $this->belongsTo('App\Tenant');
     }
+
+    public function favoriteUsers()
+    {
+        return $this->belongsToMany('App\User');
+    }
 }

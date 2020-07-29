@@ -9,7 +9,11 @@ use Illuminate\Notifications\Notifiable;
 class Tenant extends Authenticatable
 {
     use Notifiable;
-
+    
+    public function republics()
+    {
+        return $this->hasMany('App\Republic');
+    }
     /**
      * The attributes that are mass assignable.
      *
@@ -37,9 +41,5 @@ class Tenant extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function republics()
-    {
-        return $this->hasMany('App\Republic');
-    }
 }
 

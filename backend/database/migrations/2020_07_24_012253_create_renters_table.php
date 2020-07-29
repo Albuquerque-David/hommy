@@ -24,7 +24,8 @@ class CreateRentersTable extends Migration
             $table->string('state');
             $table->string('interestedNeighborhood')->nullable();
             $table->string('phoneNumber');
-            $table->timestamps();
+            $table->unsignedBigInteger('bedroom_id')->nullable();
+            $table->timestamps(); 
         });
     }
 

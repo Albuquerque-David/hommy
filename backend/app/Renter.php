@@ -10,6 +10,20 @@ class Renter extends Authenticatable
 {
     use Notifiable;
 
+     public function commentaries()
+    {
+        return $this->hasMany('App\Commentary');
+    }
+
+    public function favourites()
+    {
+        return $this->belongsToMany('App\Republic');
+    }
+    
+    public function bedroom()
+    {
+        return $this->hasOne('App\Bedroom');
+    }
     /**
      * The attributes that are mass assignable.
      *
@@ -36,10 +50,5 @@ class Renter extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-    
-    public function commentaries()
-    {
-        return $this->hasMany('App\Commentary');
-    }
 }
 
