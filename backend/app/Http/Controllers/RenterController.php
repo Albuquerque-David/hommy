@@ -14,9 +14,7 @@ class RenterController extends Controller
     public function createRenter(RenterRequest $request)
     {
         $renter = new Renter;
-        
-        $this->fillRenter($renter,$request);
-        $renter->save();
+        $renter->createRenter($request);
         return response()->json($renter, 201);
     }
 
