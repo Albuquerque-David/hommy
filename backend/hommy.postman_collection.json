@@ -9,12 +9,136 @@
 			"name": "Renters",
 			"item": [
 				{
+					"name": "Bedrooms",
+					"item": [
+						{
+							"name": "ShowBedroom",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/renter/3/bedroom",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"renter",
+										"3",
+										"bedroom"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RentBedroom",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "bedroom_id",
+											"value": "2",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/renter/5/bedroom",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"renter",
+										"5",
+										"bedroom"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DeleteBedroom",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/renter/2/bedroom",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"renter",
+										"2",
+										"bedroom"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Favourites",
+					"item": [
+						{
+							"name": "ShowFavourites",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/renter/1/favourites",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"renter",
+										"1",
+										"favourites"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
 					"name": "ShowRenter",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:8000/api/renter/4",
+							"raw": "http://127.0.0.1:8000/api/renter/2",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -26,7 +150,7 @@
 							"path": [
 								"api",
 								"renter",
-								"4"
+								"2"
 							]
 						}
 					},
@@ -65,12 +189,12 @@
 							"urlencoded": [
 								{
 									"key": "name",
-									"value": "maria",
+									"value": "Vinicius",
 									"type": "text"
 								},
 								{
 									"key": "email",
-									"value": "davivvvvd@david.com",
+									"value": "vini@davvvsssid.com",
 									"type": "text"
 								},
 								{
@@ -89,13 +213,13 @@
 									"type": "text"
 								},
 								{
-									"key": "phoneNumber",
-									"value": "12345678",
+									"key": "interestedNeighborhood",
+									"value": "Tijuca",
 									"type": "text"
 								},
 								{
-									"key": "interestedNeighborhood",
-									"value": "",
+									"key": "phoneNumber",
+									"value": "12345678",
 									"type": "text"
 								},
 								{
@@ -301,7 +425,7 @@
 							"urlencoded": [
 								{
 									"key": "republic_id",
-									"value": "1",
+									"value": "2",
 									"type": "text"
 								}
 							]
@@ -617,6 +741,102 @@
 			"name": "Republics",
 			"item": [
 				{
+					"name": "Comments",
+					"item": [
+						{
+							"name": "ShowCommentaries",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/republic/1/comments",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"republic",
+										"1",
+										"comments"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Tenant",
+					"item": [
+						{
+							"name": "ShowTenant",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/republic/1/tenant",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"republic",
+										"1",
+										"tenant"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Renters",
+					"item": [
+						{
+							"name": "ShowRenters",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/republic/1/renters",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"republic",
+										"1",
+										"renters"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
 					"name": "ShowRepublic",
 					"request": {
 						"method": "GET",
@@ -683,7 +903,7 @@
 								},
 								{
 									"key": "neighborhood",
-									"value": "Tijucassss",
+									"value": "Botafogo",
 									"type": "text"
 								},
 								{
@@ -699,11 +919,6 @@
 								{
 									"key": "address",
 									"value": "Rua dos Fulanos, 1",
-									"type": "text"
-								},
-								{
-									"key": "bedrooms",
-									"value": "1",
 									"type": "text"
 								},
 								{
@@ -939,17 +1154,17 @@
 							"urlencoded": [
 								{
 									"key": "commentary",
-									"value": "This is a description.",
+									"value": "This is a commentary 4.",
 									"type": "text"
 								},
 								{
-									"key": "fk_renter",
+									"key": "renter_id",
 									"value": "1",
 									"type": "text"
 								},
 								{
-									"key": "fk_republic",
-									"value": "2",
+									"key": "republic_id",
+									"value": "1",
 									"type": "text"
 								}
 							]
@@ -1130,7 +1345,7 @@
 								},
 								{
 									"key": "republic_id",
-									"value": "1",
+									"value": "2",
 									"type": "text"
 								}
 							]
