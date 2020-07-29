@@ -43,7 +43,7 @@ class TenantController extends Controller
         if(!($this->validateRequest($request)))
             return response()->json('Bad format', 400);
         
-        $this->filltenant($tenant,$request);
+        $this->fillTenant($tenant,$request);
         $tenant->save();
         return response()->json($tenant, 201);
     }

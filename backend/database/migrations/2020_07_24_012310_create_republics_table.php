@@ -21,7 +21,6 @@ class CreateRepublicsTable extends Migration
             $table->string('city');
             $table->string('neighborhood');
             $table->string('address');
-            $table->string('bedrooms');
             $table->string('bathrooms');
             $table->string('allowedTo');
             $table->string('value');

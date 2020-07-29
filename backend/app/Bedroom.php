@@ -13,6 +13,6 @@ class Bedroom extends Model
     
     public function renter()
     {
-        return $this->belongsToOne('App\Renter');
+        return $this->hasOne('App\Renter');
     }
 }

@@ -12,7 +12,7 @@ class Republic extends Model
         return $this->belongsTo('App\Tenant');
     }
 
-    public function favoriteUsers()
+    public function favouriteUsers()
     {
         return $this->belongsToMany('App\User');
     }
@@ -20,5 +20,10 @@ class Republic extends Model
     public function bedrooms()
     {
         return $this->hasMany('App\Bedroom');
+    }
+
+    public function comments()
+    {
+        return $this->hasMany('App\Commentary');
     }
 }
