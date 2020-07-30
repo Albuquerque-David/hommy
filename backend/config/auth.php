@@ -15,7 +15,7 @@ return [
 
     'defaults' => [
         'guard' => 'web',
-        'passwords' => 'users',
+        'passwords' => 'renters',
     ],
 
     /*
@@ -38,12 +38,13 @@ return [
     'guards' => [
         'web' => [
             'driver' => 'session',
-            'provider' => 'users',
+            'provider' => 'renters',
         ],
 
         'api' => [
-            'driver' => 'token',
-            'provider' => 'users',
+            'driver' => 'passport',
+            'provider' => 'renters',
+
             'hash' => false,
         ],
     ],
@@ -66,9 +67,9 @@ return [
     */
 
     'providers' => [
-        'users' => [
+        'renters' => [
             'driver' => 'eloquent',
-            'model' => App\User::class,
+            'model' => App\Renter::class,
         ],
 
         // 'users' => [
@@ -93,8 +94,8 @@ return [
     */
 
     'passwords' => [
-        'users' => [
-            'provider' => 'users',
+        'renters' => [
+            'provider' => 'renters',
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,

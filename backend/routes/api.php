@@ -19,6 +19,17 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 //
+// Passport Routes
+//
+Route::post('register', 'API\PassportController@register');
+Route::post('login', 'API\PassportController@login');
+
+Route::group(['middleware'=>'auth:api'], function(){
+    Route::get('logout', 'API\PassportController@logout');
+    Route::get('getDetails', 'API\PassportController@getDetails');
+});
+
+//
 // CRUD Routes
 //
 
