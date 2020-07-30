@@ -20,3 +20,5 @@ $factory->define(Republic::class, function (Faker $faker) {
         'tenant_id' => factory('App\Tenant')->create()->id,
     ];
 });
+
+

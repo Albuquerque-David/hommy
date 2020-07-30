@@ -13,11 +13,8 @@ class RepublicTableSeeder extends Seeder
     {
         //
         factory (App\Republic::class,10)->create()->each(function($republic){
-            $tenant = factory(App\Tenant::class)->make();            
-            $republic->tenant()->save($tenant);
-
-            $comments = factory(App\Comment::class, 2)->make();
-            $repubic->comments()->saveMany($comments);
+            $comments = factory(App\Commentary::class, 2)->make();
+            $republic->comments()->saveMany($comments);
         });
     }
 }

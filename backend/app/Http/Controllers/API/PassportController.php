@@ -26,11 +26,6 @@ class PassportController extends Controller
         $email = $request->email;
         $password = $request->password;
 
-        $out = new \Symfony\Component\Console\Output\ConsoleOutput();
-        $out->writeln("Hello from Terminal");
-        $out->writeln($email);
-        $out->writeln($password);
-
         if(Auth::attempt(['email'=>$email, 'password'=>$password]))
         {
             $user = Auth::user();

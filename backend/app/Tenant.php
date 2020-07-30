@@ -15,7 +15,7 @@ class Tenant extends Authenticatable
     
     public function republics()
     {
-        return $this->hasMany('App\Republic');
+        return $this->belongsTo('App\Republic');
     }
     /**
      * The attributes that are mass assignable.
