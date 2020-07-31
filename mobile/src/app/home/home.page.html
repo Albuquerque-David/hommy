@@ -16,6 +16,14 @@
   
 
   <div class="filters-bar" >
+    <ion-chip (click)="highRating()">
+      <ion-icon name="star-outline"></ion-icon>
+      <ion-label>Avaliações</ion-label>
+    </ion-chip>
+    <ion-chip (click)="lowerPrice()">
+      <ion-icon name="cash-outline"></ion-icon>
+      <ion-label>Preço</ion-label>
+    </ion-chip>
     <ion-chip>
       <ion-icon name="bed-outline"></ion-icon>
       <ion-label>Quartos</ion-label>
@@ -31,10 +39,6 @@
     <ion-chip>
       <ion-icon name="heart"></ion-icon>
       <ion-label>Favoritos</ion-label>
-    </ion-chip>
-    <ion-chip>
-      <ion-icon name="cash-outline"></ion-icon>
-      <ion-label>Preço</ion-label>
     </ion-chip>
     <ion-chip>
       <ion-icon name="planet-outline"></ion-icon>
