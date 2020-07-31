@@ -14,9 +14,10 @@ $factory->define(Republic::class, function (Faker $faker) {
         'state'=> $faker->state,
         'neighborhood' => $faker->cityPrefix,
         'address' => $faker->address,
-        'value'=> $faker->randomFloat,
+        'value'=> $faker->randomFloat(2,0,5000),
         'bathrooms' => $faker->randomDigit,
         'allowedTo' => 'gender', 
+        'rating'=>$faker->randomFloat($nbMaxDecimals = 2, $min = 0, $max = 5),
         'tenant_id' => factory('App\Tenant')->create()->id,
     ];
 });

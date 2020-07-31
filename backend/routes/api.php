@@ -30,6 +30,14 @@ Route::group(['middleware'=>'auth:api'], function(){
 });
 
 //
+// Filter Routes
+//
+Route::get('republic/lowerToHigher/{list?}','RepublicController@getLowerPriceRepublics');
+Route::get('republic/rate/{rating}','RepublicController@getRepublicsByRate');
+Route::get('republic/deleted','RepublicController@getDeletedRepublics');
+
+
+//
 // CRUD Routes
 //
 
@@ -48,11 +56,12 @@ Route::put('tenant/{id}','TenantController@updateTenant');
 Route::delete('tenant/{id}','TenantController@deleteTenant');
 
 //Republic
-Route::get('republic','RepublicController@listRepublics');
+Route::get('republic/{rating?}/{name?}','RepublicController@listRepublics');
 Route::get('republic/{id}','RepublicController@showRepublic');
 Route::post('republic','RepublicController@createRepublic');
 Route::put('republic/{id}','RepublicController@updateRepublic');
 Route::delete('republic/{id}','RepublicController@deleteRepublic');
+
 
 //Comementaries
 Route::get('commentary','CommentaryController@listCommentaries');

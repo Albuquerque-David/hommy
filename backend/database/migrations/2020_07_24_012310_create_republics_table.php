@@ -24,11 +24,13 @@ class CreateRepublicsTable extends Migration
             $table->string('bathrooms');
             $table->string('allowedTo');
             $table->string('value');
+            $table->double('rating');
             $table->unsignedBigInteger('tenant_id');
             $table->timestamps();
         });
 
         Schema::table('republics', function (Blueprint $table) {
+            $table->softDeletes();
             $table->foreign('tenant_id')->references('id')->on('tenants')->onDelete('cascade'); 
         });
     }
