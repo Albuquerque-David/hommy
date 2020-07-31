@@ -14,53 +14,37 @@ class RepublicController extends Controller
     public function createRepublic(RepublicRequest $request)
     {
         $republic = new Republic;
-        
         $this->fillRepublic($republic,$request);
-                
-        if(!isset($republic) || $republic->tenant == null)
-            return response()->json('Tenant not found', 404);
-        
-        $republic->save();
-
+        $republic->createRepublic();
         return response()->json($republic, 201);
     }
 
     public function showRepublic($id)
     {
-        $republic = Republic::findOrFail($id);
-        if($republic == null)
-            return response()->json('Republic not found.',404);
-        
+        $republic = Republic::showRepublic($id);
         return response()->json($republic, 200);
     }
 
     public function listRepublics()
     {
-        $republic = Republic::all();
+        $republic = new Republic;
+        $republic = $republic->listRepublics();
         return response()->json($republic, 200);
     }
 
     public function updateRepublic(RepublicRequest $request, $id)
     {
-        $republic = Republic::findOrFail($id);
-        
+        $republic = new Republic;
         $this->fillRepublic($republic,$request);
-
-        if(!isset($republic) || $republic->tenant == null)
-            return response()->json('Tenant not found', 404);
-
-        $republic->save();
+        $republic->updateRepublic();
         return response()->json($republic, 201);
     }
 
     public function deleteRepublic($id)
     {
-        $republic = republic::findOrFail($id);
-        if($republic == null)
-            return response()->json('Republic not found',404);
-
-        republic::destroy($id);
-        return response()->json(['Republic ' . $id . ' deleted.'], 200);
+        $republic = new Republic;
+        $republic = $republic->deleteRepublic($id);
+        return response()->json($republic);
     }
 
     //
@@ -102,6 +86,28 @@ class RepublicController extends Controller
     //
     // Methods
     //
+    public function getRepublicsByRate($rating)
+    {
+        $queryRepublic = Republic::query();
+        if($rating)
+            $queryRepublic->where('rating','=',$rating);
+        return response()->json($queryRepublic->get(), 200);
+    }
+
+    public function getLowerPriceRepublics($list = 10)
+    {
+        $republics = Republic::orderBy('value','desc')->take($list)->get();
+        return response()->json($republics, 200);
+    }
+
+    public function getDeletedRepublics()
+    {
+        return response()->json(Republic::onlyTrashed()->get(), 200);
+    }
+
+    //
+    // Private Methods
+    //
 
     private function fillRepublic(Republic $republic, RepublicRequest $request)
     {
@@ -114,6 +120,7 @@ class RepublicController extends Controller
         $republic->bathrooms = $request->bathrooms == null ? $republic->bathrooms : $request->bathrooms;
         $republic->allowedTo = $request->allowedTo == null ? $republic->allowedTo : $request->allowedTo;
         $republic->value = $request->value == null ? $republic->value : $request->value;
+        $republic->rating = $request->rating == null ? $republic->rating : $request->rating;
         $republic->tenant_id = $request->tenant_id == null ? $republic->tenant_id : $request->tenant_id;
     }
 

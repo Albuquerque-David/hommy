@@ -36,6 +36,7 @@ class RepublicRequest extends FormRequest
             'bathrooms'=>'required|integer',
             'allowedTo'=>'required|string',
             'value'=>'required|numeric',
+            'rating'=>'required|numeric',
             'tenant_id'=>'required|integer',
         ];
     }
@@ -57,6 +58,8 @@ class RepublicRequest extends FormRequest
             'neighborhood.string'=>'Neighborhood needs to be an string value',
             'address.required'=>'Address field required.',
             'address.string'=>'Address needs to be an string value',
+            'rating.required'=>'Rating field required.',
+            'rating.numeric'=>'Rating needs to be an numeric value',
             'allowedTo.required'=>'AllowedTo field required.',
             'allowedTo.string'=>'AllowedTo needs to be an string value',
             'value.required'=>'Value field required.',
