@@ -94,9 +94,16 @@ class RepublicController extends Controller
         return response()->json($queryRepublic->get(), 200);
     }
 
+    public function getRepublicsWithHighRating()
+    {
+        $queryRepublic = Republic::query();
+        $queryRepublic->orderBy('rating','desc')->take(10)->get();
+        return response()->json($queryRepublic->get(), 200);
+    }
+
     public function getLowerPriceRepublics($list = 10)
     {
-        $republics = Republic::orderBy('value','desc')->take($list)->get();
+        $republics = Republic::orderBy('value','asc')->take($list)->get();
         return response()->json($republics, 200);
     }
 
