@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Republic;
 use App\Http\Requests\RepublicRequest;
+use App\Http\Resources\Republic as RepublicResource;
 
 class RepublicController extends Controller
 {
@@ -86,12 +87,28 @@ class RepublicController extends Controller
     //
     // Methods
     //
-    public function getRepublicsByRate($rating)
-    {
-        $queryRepublic = Republic::query();
-        if($rating)
-            $queryRepublic->where('rating','=',$rating);
-        return response()->json($queryRepublic->get(), 200);
+    public function search(Request $request){
+        $queryRepublic= Republic::query();
+        if($request->paginate)
+            $paginate = $request->paginator;
+        else
+            $paginate = 5;
+
+        if($request->rating)
+            $queryRepublic->where('rating','>=',$request->rating);
+
+        if($request->value)
+            $queryRepublic->where('value','<=',$request->value);
+
+        if($request->comment)
+            $queryRepublic = Republic::has('comments','>=',$request->comment);
+
+        $search=$queryRepublic->get();
+        $ids=$search->pluck('id');
+        $paginator=Republic::whereIn('id',$ids)->paginate($paginate);
+        $republics= RepublicResource::collection($paginator);
+        $last = $republics->lastPage();
+        return response()->json([$republics,$last] );
     }
 
     public function getLowerPriceRepublics($list = 10)
