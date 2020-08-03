@@ -11,7 +11,7 @@ class TenantController extends Controller
     //
     // CRUD
     //
-    public function createtenant(TenantRequest $request)
+    public function createTenant(TenantRequest $request)
     {
         $tenant = new Tenant;
         
