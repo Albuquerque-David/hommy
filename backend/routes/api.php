@@ -34,6 +34,7 @@ Route::group(['middleware'=>'auth:api'], function(){
 //
 Route::get('republic/search','RepublicController@search');
 Route::get('republic/lowerToHigher/{list?}','RepublicController@getLowerPriceRepublics');
+Route::get('republic/rate/highRating','RepublicController@getRepublicsWithHighRating');
 Route::get('republic/deleted','RepublicController@getDeletedRepublics');
 
 
