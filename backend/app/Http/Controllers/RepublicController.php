@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Republic;
 use App\Http\Requests\RepublicRequest;
-use App\Http\Resources\Republic as RepublicResource;
 
 class RepublicController extends Controller
 {
@@ -16,7 +15,7 @@ class RepublicController extends Controller
     {
         $republic = new Republic;
         $this->fillRepublic($republic,$request);
-        $republic->createRepublic();
+        $republic->createRepublic($request);
         return response()->json($republic, 201);
     }
 
@@ -87,28 +86,12 @@ class RepublicController extends Controller
     //
     // Methods
     //
-    public function search(Request $request){
-        $queryRepublic= Republic::query();
-        if($request->paginate)
-            $paginate = $request->paginator;
-        else
-            $paginate = 5;
-
-        if($request->rating)
-            $queryRepublic->where('rating','>=',$request->rating);
-
-        if($request->value)
-            $queryRepublic->where('value','<=',$request->value);
-
-        if($request->comment)
-            $queryRepublic = Republic::has('comments','>=',$request->comment);
-
-        $search=$queryRepublic->get();
-        $ids=$search->pluck('id');
-        $paginator=Republic::whereIn('id',$ids)->paginate($paginate);
-        $republics= RepublicResource::collection($paginator);
-        $last = $republics->lastPage();
-        return response()->json([$republics,$last] );
+    public function getRepublicsByRate($rating)
+    {
+        $queryRepublic = Republic::query();
+        if($rating)
+            $queryRepublic->where('rating','=',$rating);
+        return response()->json($queryRepublic->get(), 200);
     }
 
     public function getRepublicsWithHighRating()
@@ -146,6 +129,7 @@ class RepublicController extends Controller
         $republic->value = $request->value == null ? $republic->value : $request->value;
         $republic->rating = $request->rating == null ? $republic->rating : $request->rating;
         $republic->tenant_id = $request->tenant_id == null ? $republic->tenant_id : $request->tenant_id;
+        $republic->photo = $request->photo == null ? $republic->photo : $request->photo;
     }
 
 }
