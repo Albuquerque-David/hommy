@@ -27,6 +27,7 @@ Route::post('login', 'API\PassportController@login');
 Route::group(['middleware'=>'auth:api'], function(){
     Route::get('logout', 'API\PassportController@logout');
     Route::get('getDetails', 'API\PassportController@getDetails');
+    Route::delete('tenant/republic/{id}','RepublicController@deleteRepublic')->middleware('deleteRepublicValidator');
 });
 
 //

@@ -38,6 +38,7 @@ class RepublicRequest extends FormRequest
             'value'=>'required|numeric',
             'rating'=>'required|numeric',
             'tenant_id'=>'required|integer',
+            'file'=>'file',
         ];
     }
 

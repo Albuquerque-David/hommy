@@ -4,8 +4,8 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Http\Requests\RenterRequest;
-use App\Renter;
+use App\Http\Requests\TenantRequest;
+use App\Tenant;
 use Auth;
 use DB;
 
@@ -13,10 +13,10 @@ use DB;
 class PassportController extends Controller
 {
     //
-    public function register(RenterRequest $request)
+    public function register(TenantRequest $request)
     {
-        $newuser = new Renter;
-        $newuser->createRenter($request);
+        $newuser = new Tenant;
+        $newuser->createTenant($request);
         $success['token']=$newuser->createToken('MyApp')->accessToken;
         return response()->json(['Success' => $success, 'user'=>$newuser],200);
     }

@@ -4,15 +4,27 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 Use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\Storage;
+use App\Http\Requests\RepublicRequest;
+
 
 class Republic extends Model
 {
     use SoftDeletes;
 
-    public function createRepublic()
+    public function createRepublic(RepublicRequest $request)
     {
         if(!isset($this) || $this->tenant == null)
             return response()->json('Tenant not found', 404);
+        if(!Storage::exists('localPhotos/'))
+            Storage::makeDirectory('localPhotos/',0775,true);
+
+        $image = base64_decode($request->photo);
+        $filename=uniqid();
+        $path=storage_path('/app/localPhotos/'.$filename);
+        file_put_contents($path,$image);
+
+        $this->photo=$path;
         $this->save();
     }
 
