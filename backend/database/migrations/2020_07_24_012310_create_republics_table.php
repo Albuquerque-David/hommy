@@ -25,6 +25,7 @@ class CreateRepublicsTable extends Migration
             $table->string('allowedTo');
             $table->string('value');
             $table->double('rating');
+            $table->string('photo')->nullable();
             $table->unsignedBigInteger('tenant_id');
             $table->timestamps();
         });

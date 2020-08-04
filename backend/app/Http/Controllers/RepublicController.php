@@ -16,7 +16,7 @@ class RepublicController extends Controller
     {
         $republic = new Republic;
         $this->fillRepublic($republic,$request);
-        $republic->createRepublic();
+        $republic->createRepublic($request);
         return response()->json($republic, 201);
     }
 
@@ -130,6 +130,7 @@ class RepublicController extends Controller
         $republic->value = $request->value == null ? $republic->value : $request->value;
         $republic->rating = $request->rating == null ? $republic->rating : $request->rating;
         $republic->tenant_id = $request->tenant_id == null ? $republic->tenant_id : $request->tenant_id;
+        $republic->photo = $request->photo == null ? $republic->photo : $request->photo;
     }
 
 }
