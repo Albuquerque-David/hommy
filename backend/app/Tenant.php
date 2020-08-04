@@ -6,11 +6,20 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Passport\HasApiTokens;
+use App\Http\Requests\TenantRequest;
+
 
 class Tenant extends Authenticatable
 {
     use Notifiable;
     use HasApiTokens;
+
+    public function createTenant(TenantRequest $request)
+    {
+        $this->fillTenant($this,$request);
+        $this->password = bcrypt($request->password);
+        $this->save();
+    }
 
     
     public function republics()
@@ -43,6 +52,15 @@ class Tenant extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    private function fillTenant(Tenant $tenant, TenantRequest $request)
+    {
+        $tenant->name = $request->name == null ? $tenant->name : $request->name;
+        $tenant->email = $request->email == null ? $tenant->email : $request->email;
+        $tenant->password = $request->password == null ? $tenant->password : $request->password;
+        $tenant->cpf = $request->cpf == null ? $tenant->cpf : $request->cpf;
+        $tenant->phoneNumber = $request->phoneNumber == null ? $tenant->phoneNumber : $request->phoneNumber;
+    }
 
 }
 

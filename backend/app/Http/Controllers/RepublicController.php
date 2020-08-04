@@ -8,6 +8,7 @@ use App\Http\Requests\RepublicRequest;
 
 class RepublicController extends Controller
 {
+    
     //
     // CRUD
     //

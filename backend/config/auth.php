@@ -38,12 +38,12 @@ return [
     'guards' => [
         'web' => [
             'driver' => 'session',
-            'provider' => 'renters',
+            'provider' => 'tenants',
         ],
 
         'api' => [
             'driver' => 'passport',
-            'provider' => 'renters',
+            'provider' => 'tenants',
 
             'hash' => false,
         ],
@@ -67,9 +67,9 @@ return [
     */
 
     'providers' => [
-        'renters' => [
+        'tenants' => [
             'driver' => 'eloquent',
-            'model' => App\Renter::class,
+            'model' => App\Tenant::class,
         ],
 
         // 'users' => [
@@ -94,8 +94,8 @@ return [
     */
 
     'passwords' => [
-        'renters' => [
-            'provider' => 'renters',
+        'tenants' => [
+            'provider' => 'tenants',
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,
